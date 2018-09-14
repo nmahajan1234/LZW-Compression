@@ -1,0 +1,71 @@
+ /*
+ * Nayan Milind Mahajan (801024259)
+ */ 
+
+
+This project consists of two parts:
+1) Compression (Encoder) : For this, we are using Encoder.java and Transform.java for converting file from .txt to .lzw format.
+2) Decompression (Decoder) : For this, we are using Decoder.java and CodeToAscii.java for converting file from .lzw to .txt format.
+
+ 
+
+Project Design :
+
+In compression, it is Encoder.java contains main function and Transform.java contains implementation of code.
+Steps followed while implementing Encoder code
+1) Reading data from input1.txt file in string format. "f_read" (in Encoder.java) function used for file reading.
+2) Creating a hashmap (data strcture) which includes the table for interger to Ascii values and vice versa. "create_hmap" (in Encoder.java) function used for hashmap creation.
+3) In Tranform.java, we are using only one function "transform" to implement pseudocode for encoding and storing this output temporarily in an integer arraylist.
+4) Finally, we are creating input1.lzw file and writing output in UTF-16BE format inside input1.lzw file. "filewrite" is used for writing output to the file.
+
+In decompression, it is Decoder.java contains main function and CodeToAscii.java contains implementation of code.
+Steps followed while implementing Decoder code
+1) Reading data from input1.lzw file in integer arraylist format. "file_read" (in Decoder.java) function used for file reading.
+2) Creating a hashmap (data strcture) which includes the table for interger to Ascii values and vice versa. "create_hmap" (in Decoder.java) function used for hashmap creation.
+3) In CodeToAscii.java, we are using only one function "codeToAscii" to implement pseudocode for decoding and storing this output temporarily in a string.
+4) Finally, we are creating input1_decoded.txt file and writing output inside input1_decoded.txt file. "file_writer" is used for writing output to the file.
+
+
+Data Structure:
+
+In this project, I am using Hashmap data structure for conversion of integer to ASCII values. 
+This is created by mapping each integer value from 0 to 255 to its correspoding ASCII values.
+Object created for the hashmap is hmap.
+
+File breakdown:
+
+For encoding,
+1) Encoder.java
+	-> "f_read" function
+	-> "create_hmap" function
+	-> "filewrite" function
+2) Transform.java
+	-> "transform" functin
+
+For decoding,
+1) Decoder.java
+	-> "file_read" function
+	-> "create_hmap" functions
+	-> "file_writer" function
+2) CodeToAscII.java
+	-> "codeToAscii" function
+
+
+Programming language : Java
+
+Compiler version : java version "1.8.0_161"
+
+Steps to run the program:
+
+Commands;
+1) javac Encoder.java 
+2) java Encoder input1.txt 12
+3) javac Decoder.java 
+4) java Decoder input1.lzw 12
+
+
+
+
+
+
+
